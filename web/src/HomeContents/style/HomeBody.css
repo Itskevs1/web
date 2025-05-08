@@ -1,0 +1,312 @@
+/* ===== Navbar ===== */
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px 40px;
+  background-color: #fff;
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+}
+
+.navbar-left {
+  display: flex;
+  align-items: center;
+  gap: 30px;
+}
+
+.hamburger {
+  width: 35px;
+  height: 35px;
+  cursor: pointer;
+}
+
+.ustpfoodlogo {
+  width: 85px;
+  height: 60px;
+}
+
+.navbar-right {
+  display: flex;
+  gap: 10px;
+}
+
+.login,
+.signup {
+  padding: 12px 25px;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  font-weight: bold;
+}
+
+.login {
+  background-color: #fcbf29;
+  border: 2px solid #fcbf29;
+  color: black;
+}
+
+.signup {
+  background-color: #fcbf29;
+  color: black;
+}
+
+/* Sidebar Overlay */
+.sidebar-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.3);
+  z-index: 1400;
+}
+
+/* Sidebar Styling */
+.sidebar {
+  position: fixed;
+  top: 0;
+  left: -300px;
+  width: 260px;
+  height: 100%;
+  background-color: white;
+  box-shadow: 2px 0 12px rgba(0, 0, 0, 0.2);
+  transition: left 0.3s ease;
+  z-index: 1500;
+  display: flex;
+  flex-direction: column;
+}
+
+.sidebar.show {
+  left: 0;
+}
+
+.sidebar-header {
+  background-color: #fcbf29;
+  padding: 180px 20px 20px;
+  display: flex;
+  justify-content: flex-end;
+}
+
+.close-btn {
+  font-size: 28px;
+  background: none;
+  border: none;
+  cursor: pointer;
+  color: #333;
+}
+
+.sidebar-content {
+  background-color: white;
+  padding: 45px 35px;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.sidebar-item {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-weight: bold;
+  font-size: 18px;
+  color: black;
+  cursor: pointer;
+  transition: transform 0.2s;
+}
+
+.sidebar-item:hover {
+  transform: translateX(5px);
+}
+
+.sidebar-item img {
+  width: 24px;
+  height: 24px;
+}
+
+/* ===== Body ===== */
+.header {
+  width: 100%;
+  height: 100vh;
+  background: url("/frontbuilding.jpg") no-repeat center center;
+  background-size: cover;
+  position: relative;
+  z-index: 1;
+  margin-bottom: 40px;
+}
+
+.header-contents {
+  color: white;
+  position: absolute;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 0.5vw;
+  max-width: 100%;
+  bottom: 20%;
+  left: 6vw;
+  animation: fadeIn 3s;
+}
+
+.header-contents h2 {
+  font-size: 2rem;
+  margin: 0.5rem 0;
+}
+
+.header-contents h3 {
+  font-size: 1.2rem;
+  margin: 0;
+}
+
+@media (max-width: 1050px) {
+  .header {
+    height: 80vh;
+  }
+  .header-contents {
+    max-width: 80%;
+  }
+}
+
+@media (max-width: 750px) {
+  .header-contents {
+    max-width: 90%;
+  }
+}
+
+/* ===== FavoriteBites ===== */
+.container {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  background-color: white;
+  padding: 30px;
+  text-align: right;
+  z-index: 2;
+  position: relative;
+  margin-top: 0;
+}
+
+.favoritebites h3 {
+  font-size: 2rem;
+  margin: 0;
+  font-family: "Arial", sans-serif;
+}
+
+.favoritebites p {
+  font-size: 1.5rem;
+  margin: 0;
+  font-family: "Arial", sans-serif;
+}
+
+/* ===== DailyDeals ===== */
+.food-display {
+  margin: 50px auto;
+  padding: 0 20px;
+  max-width: 1200px;
+  text-align: center;
+}
+
+.daily {
+  font-size: 1.8rem;
+  font-weight: bold;
+  margin-bottom: 30px;
+}
+
+.food-display-list {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 30px;
+}
+
+.deals-grid {
+  border: 2px solid #6e3c20;
+  border-radius: 15px;
+  overflow: hidden;
+  background-color: white;
+  box-shadow: 0px 0px 10px #00000015;
+  transition: transform 0.3s;
+}
+
+.deals-grid:hover {
+  transform: scale(1.03);
+}
+
+.profile-picture {
+  width: 100%;
+  height: 180px;
+  object-fit: cover;
+  border: 3px solid #6e3c20;
+}
+
+.name {
+  padding: 15px;
+  font-size: 1rem;
+  font-weight: 500;
+  font-family: "Arial", sans-serif;
+  color: black;
+}
+
+/* ===== Bottom ===== */
+.continue2-content {
+  height: 50vw;
+  margin: 30px auto;
+  background: url("/bottom.png") no-repeat center center;
+  background-size: contain;
+  position: relative;
+  margin-bottom: 20%;
+}
+
+.bottom {
+  margin-bottom: 320px;
+}
+
+.flavor {
+  margin-left: 20px;
+  margin-bottom: -135px;
+}
+
+.contents {
+  position: absolute;
+  top: 60%;
+  left: 5%;
+  max-width: 450px;
+  background: white;
+  padding: 25px;
+  border-radius: 15px;
+  box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.2);
+}
+
+.first {
+  width: 1000px;
+  font-size: 20px;
+  margin-bottom: 15px;
+}
+
+.second {
+  width: 410px;
+  margin-bottom: 15px;
+}
+
+.third {
+  margin-bottom: 15px;
+}
+
+.fourth {
+  margin-bottom: 15px;
+}
+
+.button {
+  background-color: #fcbf29;
+  color: black;
+  font-weight: bold;
+  padding: 5px 30px;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.button:hover {
+  background-color: #e0a800;
+}

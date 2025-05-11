@@ -187,3 +187,17 @@
   display: flex;
   flex-direction: column;
 }
+
+.eye-icon {
+  width: 20px;
+  height: 20px;
+  cursor: pointer;
+  object-fit: contain;
+}
+
+.centered-button {
+  display: flex;
+  justify-content: center;
+  width: 100%;
+  margin-top: 10px;
+}

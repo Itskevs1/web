@@ -1,0 +1,21 @@
+/* Optional: Styling for the caption */
+.store1-caption {
+  margin-top: 40px;
+  text-align: center; /* This should center the h2 and p elements within the caption div */
+}
+
+.store1-caption h2 {
+  font-family: Georgia, serif;
+  font-weight: bold;
+  margin-bottom: 8px;
+  color: #333;
+  /* The h2 itself will be a block, text-align: center on parent centers the block if its width is not 100%
+     or centers the text within it if it is 100% width. Given it's a block element, this should work. */
+}
+
+.store1-caption p {
+  font-family: "Caveat", cursive;
+  font-size: 22px;
+  color: #555;
+  /* Same centering logic as h2 applies */
+}

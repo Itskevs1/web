@@ -1,0 +1,40 @@
+/* Order.css */
+.order-wrapper {
+  padding: 40px;
+  font-family: Arial, sans-serif;
+}
+
+.order-wrapper h2 {
+  font-size: 20px;
+  margin-bottom: 20px;
+}
+
+.order-box {
+  display: flex;
+  align-items: center;
+  border: 1px solid #ccc;
+  padding: 15px;
+  gap: 25px;
+  margin-bottom: 20px;
+}
+
+.order-icon img {
+  width: 50px;
+  height: 50px;
+}
+
+.order-details {
+  flex: 2;
+  font-size: 16px;
+}
+
+.order-price,
+.order-count,
+.order-status {
+  font-size: 16px;
+  white-space: nowrap;
+}
+
+.order-status span {
+  color: red;
+}

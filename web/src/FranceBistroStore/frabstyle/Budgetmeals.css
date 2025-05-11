@@ -1,0 +1,122 @@
+/* ---------- container & breadcrumb ---------- */
+.budget-container {
+  padding: 20px;
+  font-family: "Arial", sans-serif;
+}
+
+.top-line {
+  border: none;
+  height: 2px;
+  background-color: #d0d0d0;
+  margin-bottom: 15px;
+}
+
+.breadcrumb {
+  font-size: 24px;
+  margin-bottom: 25px;
+  color: #5a2e0d;
+  white-space: nowrap;
+}
+
+.breadcrumb .highlight {
+  font-weight: bold;
+  color: #000;
+}
+
+/* ---------- price tabs ---------- */
+.price-tabs {
+  display: flex;
+  gap: 40px;
+  font-size: 24px;
+  margin-bottom: 35px;
+  color: #5a2e0d;
+}
+
+.price-tab {
+  cursor: pointer;
+  position: relative;
+}
+
+.price-tab.active {
+  font-weight: bold;
+}
+
+.price-tab.active::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: -5px;
+  width: 100%;
+  height: 3px;
+  background: #c79a14; /* yellow underline */
+}
+
+/* ---------- menu set cards ---------- */
+
+.sets-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr); /* 2 columns */
+  gap: 30px; /* spacing between cards */
+  margin-bottom: 30px;
+}
+.set-card {
+  display: flex;
+  border: 2px solid #5a2e0d;
+  margin-bottom: 35px;
+}
+
+.set-images {
+  width: 280px;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+}
+
+.set-images img {
+  width: 100%;
+  height: 120px;
+  object-fit: cover;
+  border-right: 1px solid #5a2e0d;
+  border-bottom: 1px solid #5a2e0d;
+}
+
+.set-images img:nth-child(2n) {
+  border-right: none; /* remove right border on every 2nd image */
+}
+.set-images img:nth-last-child(-n + 2) {
+  border-bottom: none; /* remove bottom border on last row */
+}
+
+.set-details {
+  flex: 1;
+  padding: 15px 20px;
+  font-size: 18px;
+  line-height: 1.35;
+}
+
+.set-title {
+  font-weight: bold;
+  margin-bottom: 6px;
+}
+
+.breadcrumb-with-records {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 15px;
+}
+
+.records-link {
+  font-size: 18px;
+  color: black;
+  cursor: pointer;
+  font-weight: normal;
+  text-decoration: none;
+  font-weight: bold;
+}
+.records-link:hover {
+  text-decoration: underline;
+}
+
+.faspecc {
+  color: #e3b041;
+}

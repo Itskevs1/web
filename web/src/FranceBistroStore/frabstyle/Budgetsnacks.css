@@ -1,0 +1,109 @@
+.snacks-container {
+  padding: 20px;
+  font-family: "Arial", sans-serif;
+}
+
+.top-line {
+  border: none;
+  height: 2px;
+  background-color: #d0d0d0;
+  margin-bottom: 10px;
+}
+
+.breadcrumb {
+  font-size: 24px;
+  color: #5a2e0d;
+  white-space: nowrap;
+  margin-bottom: 15px;
+}
+
+.breadcrumb .highlight {
+  font-weight: bold;
+  color: #000;
+}
+
+.price-tabs {
+  display: flex;
+  gap: 40px;
+  font-size: 20px;
+  margin-bottom: 25px;
+  color: #5a2e0d;
+}
+
+.price-tab {
+  cursor: pointer;
+  position: relative;
+}
+
+.price-tab.active {
+  font-weight: bold;
+}
+
+.price-tab.active::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: -5px;
+  width: 100%;
+  height: 3px;
+  background: #c79a14;
+}
+
+.category-title {
+  font-size: 20px;
+  font-weight: bold;
+  text-align: center;
+  margin: 30px 0 15px;
+}
+
+.item-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr); /* Two columns */
+  gap: 30px;
+  justify-items: center;
+  margin-bottom: 30px;
+  max-height: calc(4 * 250px + 90px); /* Limit to 4 rows visually (~8 items) */
+  overflow: auto;
+}
+
+.item-card {
+  border: 1px solid #5a2e0d;
+  text-align: center;
+  width: 220px;
+  height: 250px;
+  padding: 0px;
+  box-sizing: border-box;
+}
+
+.item-card img {
+  width: 100%;
+  height: 150px;
+  object-fit: cover;
+  border-bottom: 1px solid #5a2e0d;
+  margin-bottom: 5px;
+}
+
+.item-card p {
+  font-size: 16px;
+  color: #000;
+  margin: 5px 0;
+}
+
+.breadcrumb-line {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-left: -19px;
+}
+
+.breadcrumb-right .buffet-records-link {
+  font-weight: normal;
+  color: #333;
+  text-decoration: none;
+  font-size: 18px;
+  font-weight: bold;
+}
+
+.breadcrumb-right .buffet-records-link:hover {
+  text-decoration: underline;
+}

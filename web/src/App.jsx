@@ -93,6 +93,7 @@ const App = () => {
 
           {/* Get Started Context */}
           <Route path='/cafeteria' element={<VendorStores />} />
+
         </Routes>
         <ToastContainer />
       </div>

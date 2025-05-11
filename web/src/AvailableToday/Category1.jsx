@@ -4,10 +4,10 @@ import { assets } from "../assets/assets"; // Ensure this path is correct
 
 const Category1 = () => {
   const categories = [
-    { id: 'store-buffet', label: 'Buffet', image: assets.budget, link: '/buffet' }, // Use updated links from Category1
-    { id: 'store-budgetmeals', label: 'Budget Meals', image: assets.buffets, link: '/budget-meals' },
-    { id: 'store-budgetsnacks', label: 'Budget Snacks', image: assets.budgetmealss, link: '/budget-snacks' },
-    { id: 'store-snacks', label: 'Snacks', image: assets.snacks, link: '/snacks' },
+    { id: 'store-buffet', label: 'Buffet', image: assets.budget, link: '/buffetss' }, // Use updated links from Category1
+    { id: 'store-budgetmeals', label: 'Budget Meals', image: assets.buffets, link: '/budget-mealss' },
+    { id: 'store-budgetsnacks', label: 'Budget Snacks', image: assets.budgetmealss, link: '/budget-snackss' },
+    { id: 'store-snacks', label: 'Snacks', image: assets.snacks, link: '/snackss' },
 
   ];
 

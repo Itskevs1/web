@@ -5,12 +5,12 @@ import { assets } from '../assets/assets';
 
 // All Stores: using images from imported assets
 const allStores = [
-  { image: assets.food_1, title: 'France Bistro', route: '/category1' },
-  { image: assets.food_2, title: 'FASPeCC', route: '/store2' },
-  { image: assets.food_3, title: 'France Bistro', route: '/store3' },
-  { image: assets.food_4, title: 'France Bistro', route: '/store4' },
-  { image: assets.food_5, title: 'FASPeCC', route: '/store5' },
-  { image: assets.food_6, title: 'France Bistro', route: '/store6' },
+  { image: assets.food_1, title: 'France Bistro', route: '/Vendor-France-Bistro' },
+  { image: assets.food_2, title: 'FASPeCC', route: '/Vendor-FASPeCC' },
+  { image: assets.food_3, title: 'France Bistro', route: '/Vendor-France-Bistro' },
+  { image: assets.food_4, title: 'France Bistro', route: '/Vendor-FASPeCC' },
+  { image: assets.food_5, title: 'FASPeCC', route: '/Vendor-France-Bistro' },
+  { image: assets.food_6, title: 'France Bistro', route: '/Vendor-FASPeCC' },
 ];
 
 // availableTodayStores array has been removed

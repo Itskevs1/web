@@ -28,7 +28,28 @@ import upload from './uploadimage.png'
 import box from './box.png'
 import view from './view.png'
 import hide from './hide.png'
-
+import add from './add.png'
+import list from './list.png'
+import orderr from './orderr.png'
+import dashboard from './dashboard.png'
+import account from './account.png'
+import verified from './verified.png'
+import personal from './personal.png'
+import history from './history.png'
+import edit from './edit.png'
+import settings from './settings.png'
+import location from './location.png'
+import check from './check.png'
+import signlog from './signlog.png'
+import reservation from './reservation.png'
+import revenue from './revenue.png'
+import customer from './customer.png'
+import yellowbag from './yellowbag.png'
+import reserve from './reserve.png'
+import Orderr from './Orderr.png'
+import redx from './redx.png'
+import greencheck from './greencheck.png'
+import bin from './bin.png'
 import food_1 from './food_1.png'
 import food_2 from './food_2.png'
 import food_3 from './food_3.png'
@@ -73,7 +94,28 @@ export const assets = {
     box,
     view,
     hide,
-    
+    add,
+    list,
+    orderr,
+    verified,
+    dashboard,
+    account,
+    personal,
+    history,
+    edit,
+    settings,
+    location,
+    check,
+    signlog,
+    reservation,
+    Orderr,
+    yellowbag,
+    revenue,
+    customer,
+    reserve,
+    greencheck,
+    redx,
+    bin,
     food_1,
     food_2,
     food_3,

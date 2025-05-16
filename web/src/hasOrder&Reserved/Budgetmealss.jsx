@@ -64,7 +64,7 @@ const Budgetmealss = () => {
 
   return (
     <div className="budget-container">
-      <hr className="top-line" />
+
       {/* Breadcrumb structure as provided in your last message for Budgetmealss.jsx */}
       <h3 className="breadcrumb">
         <span className="faspecc">France Bistro</span> &gt; Budget Meals

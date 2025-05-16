@@ -1,12 +1,10 @@
-/* Overall page container for Store1 */
 .store1-page-container {
   font-family: Arial, sans-serif;
   padding: 20px;
-  background-color: #fff; /* Or a very light gray like #f8f9fa */
+  background-color: #fff;
   min-height: 100vh;
 }
 
-/* Optional: Styling for the top line */
 .store1-top-line {
   border: none;
   height: 1px;
@@ -14,7 +12,6 @@
   margin: 0 0 20px 0;
 }
 
-/* Optional: Styling for the breadcrumb */
 .store1-breadcrumb {
   text-align: left;
   color: #333;
@@ -24,7 +21,7 @@
 }
 
 .store1-breadcrumb-brand {
-  color: #c1272d; /* Example brand color */
+  color: #c1272d;
   font-weight: bold;
 }
 
@@ -39,11 +36,11 @@
 .store1-category-card {
   position: relative;
   display: block;
-  height: 200px; /* Or aspect-ratio: 16 / 10; */
+  height: 200px;
   text-decoration: none;
   color: inherit;
   background-color: #ffffff;
-  border-radius: 16px; /* Keep card rounded corners */
+  border-radius: 16px;
   overflow: hidden;
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
   transition: transform 0.25s ease-out, box-shadow 0.25s ease-out;
@@ -64,47 +61,22 @@
 /* MODIFIED LABEL STYLES */
 .store1-category-label {
   position: absolute;
-  /* Centering the band vertically */
   top: 50%;
   left: 0;
-  transform: translateY(-50%); /* Precise vertical centering */
-  width: 100%; /* Make the band span the full width of the card */
-
-  /* Background color from image_499686.jpg (semi-transparent brown) */
-  /* Eyedropper suggests a color like rgba(106, 74, 59, 0.8) or similar */
-  /* Please adjust the RGB values and opacity (the 'a' value) to match exactly */
-  background-color: rgba(
-    106,
-    74,
-    59,
-    0.85
-  ); /* Example: (Reddish-Brown, Opacity 85%) */
+  transform: translateY(-50%);
+  width: 100%;
+  background-color: rgba(106, 74, 59, 0.85);
 
   color: white;
-  padding: 10px 0; /* Adjust vertical padding as needed */
+  padding: 10px 0;
   font-size: 15px;
-  font-weight: 500; /* Or bold if it looks better */
-  text-align: center; /* Text within the band is centered */
-
-  /* No border-radius on the label band itself to keep it a straight band */
+  font-weight: 500;
+  text-align: center;
   border-radius: 0;
-
   box-sizing: border-box;
-  transition: background-color 0.2s ease; /* For hover effect if any */
+  transition: background-color 0.2s ease;
 }
 
-/* Remove hover effect for label background change if not desired,
-   or adjust as needed. The previous one was for bottom-aligned label. */
-/*
-.store1-category-card:hover .store1-category-label {
-  background-color: rgba(0, 0, 0, 0.7);
-}
-*/
-
-/* Optional: Styling for the caption */
-/* Optional: Styling for the caption */
-/* Optional: Styling for the caption */
-/* Optional: Styling for the caption */
 .store1-caption {
   margin-top: 50px;
   text-align: center;

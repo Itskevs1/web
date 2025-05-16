@@ -3,11 +3,44 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 8px 20px;
+  padding: 8px 20px; /* You might need to adjust this if content gets hidden */
   background-color: #fff;
-  position: relative;
-  z-index: 1000;
+  /* --- Sticky Navbar Changes START --- */
+  position: fixed; /* Makes the navbar stay in place */
+  top: 0; /* Positions it at the top of the viewport */
+  left: 0; /* Aligns it to the left of the viewport */
+  width: 100%; /* Makes it span the full width of the viewport */
+  z-index: 1000; /* Ensures it stays on top of other content */
+  box-sizing: border-box; /* Ensures padding doesn't add to the width */
+  /* Optional: Add a subtle shadow to make it distinct from content */
+  /* box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); */
+  /* --- Sticky Navbar Changes END --- */
 }
+
+/*
+  IMPORTANT: Body/Main Content Padding
+  Since the navbar is now fixed, it will overlay your page content.
+  You need to add padding to the top of your main content container
+  or the body itself to prevent the navbar from hiding the content
+  that would normally be at the top of the page.
+
+  The amount of padding should be at least the height of your navbar.
+  You can inspect your navbar's height in your browser's developer tools.
+  Let's assume your navbar height is around 60px (adjust as needed).
+
+  Add this to your global CSS or the CSS for your main page layout component:
+*/
+/*
+body {
+  padding-top: 60px; /* Adjust this value to your navbar's height */
+/* }
+*/
+/* Or if you have a main content wrapper: */
+/*
+.main-content-area {
+  padding-top: 60px; /* Adjust this value to your navbar's height */
+/* }
+*/
 
 .navbar-left {
   display: flex;
@@ -29,7 +62,7 @@
 }
 
 .ustpfoodlogo {
-  width: 75px;
+  width: 75px; /* Consider if this + padding makes navbar too tall */
   height: auto;
   object-fit: contain;
   display: block;
@@ -60,13 +93,35 @@
   color: black;
 }
 
+/*
+  Navbar Divider (.navbar-divider):
+  With a fixed navbar, the <hr className="navbar-divider" />
+  will scroll with the page content and appear *behind* the navbar.
+
+  Consider these options for the divider:
+  1. Remove it if not strictly needed.
+  2. Style the navbar itself with a border-bottom if you want a line directly under it:
+     .navbar {
+       ...
+       border-bottom: 1px solid #e0e0e0;
+     }
+     Then you can remove the <hr /> element from your Navbar.jsx.
+  3. If you keep the <hr />, the padding-top on your body/main content
+     might need to be increased slightly to account for its height as well
+     if it's intended to be a visible separator below the fixed navbar before content starts.
+     However, typically a border-bottom on the fixed navbar is cleaner.
+*/
 .navbar-divider {
   border: none;
   height: 1px;
   background-color: #e0e0e0;
   width: 100%;
-  margin: 0;
-  display: block;
+  margin: 0; /* This will now be relative to the normal flow, behind the fixed navbar */
+  /* If you want this to appear fixed under the navbar, it would need position: fixed as well,
+     and its `top` value would need to be the height of the navbar. This can get complicated.
+     A border-bottom on .navbar is usually simpler.
+  */
+  /* display: block; */ /* Default for hr */
 }
 
 /* --- UPDATED SIDEBAR STYLES to match image_55d9cb.png --- */
@@ -103,7 +158,7 @@
   box-shadow: 2px 0 8px rgba(0, 0, 0, 0.15);
   transform: translateX(-100%); /* Hidden by default */
   transition: transform 0.3s ease-in-out;
-  z-index: 1050; /* Above overlay */
+  z-index: 1050; /* Above overlay and navbar */
   display: flex;
   flex-direction: column;
   overflow-y: auto; /* In case content is too long */
@@ -120,7 +175,6 @@
   align-items: center;
   padding: 15px; /* Adjust padding as needed */
   background-color: #fcbf29; /* Yellow/orange color from image */
-  /* No border-bottom here, as the color change defines the section */
 }
 
 .sidebar-close-btn {
@@ -155,19 +209,10 @@
   transition: background-color 0.2s ease;
 }
 
-/* Hover effect for the entire link area */
 .sidebar-link:hover .sidebar-item {
   background-color: #f0f0f0;
   color: #000;
 }
-/* If you prefer hover directly on .sidebar-link:
-.sidebar-link:hover {
-  background-color: #f0f0f0;
-}
-.sidebar-link:hover .sidebar-item span {
-  color: #000;
-}
-*/
 
 .sidebar-item {
   display: flex;
@@ -175,14 +220,13 @@
   padding: 10px; /* Padding inside each item */
   gap: 15px; /* Space between icon and text */
   font-size: 16px; /* Text size from image */
-  font-weight: 500; /* Or bold, text in image looks quite bold */
+  font-weight: 500;
 }
 
 .sidebar-item img {
   width: 24px; /* Adjust icon size to match image */
   height: 24px;
   object-fit: contain;
-  /* The icons in your image are broken, but this is where you'd style them */
 }
 
 .sidebar-item span {

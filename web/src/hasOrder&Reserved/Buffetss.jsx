@@ -55,19 +55,19 @@ const options350 = [
   },
   // ... Add unique IDs to other options350 items similarly ...
   {
-    id: 'buffet350-opt2', title: 'OPTION 2 (350)', menu: ['Pork Humba Supreme', 'Fish Fillet with Tartar', 'Pinakbet with Lechon Kawali', 'Java Rice', 'Premium Drinks'], images: [assets.food_5, assets.food_6, assets.food_7, assets.food_8],
+    id: 'buffet350-opt2', title: 'OPTION 2', menu: ['Pork Humba Supreme', 'Fish Fillet with Tartar', 'Pinakbet with Lechon Kawali', 'Java Rice', 'Premium Drinks'], images: [assets.food_5, assets.food_6, assets.food_7, assets.food_8],
   },
   {
-    id: 'buffet350-opt3', title: 'OPTION 3 (350)', menu: ['Beef Steak Tagalog', 'Chicken Cordon Bleu Supreme', 'Chopseuy Special', 'Plain Rice', 'Premium Drinks'], images: [assets.food_1, assets.food_2, assets.food_3, assets.food_4],
+    id: 'buffet350-opt3', title: 'OPTION 3', menu: ['Beef Steak Tagalog', 'Chicken Cordon Bleu Supreme', 'Chopseuy Special', 'Plain Rice', 'Premium Drinks'], images: [assets.food_1, assets.food_2, assets.food_3, assets.food_4],
   },
   {
-    id: 'buffet350-opt4', title: 'OPTION 4 (350)', menu: ['Grilled Porkchop with Gravy', 'Crispy Calamares', 'Four Seasons Salad', 'Steamed Rice', 'Premium Drinks'], images: [assets.food_1, assets.food_2, assets.food_3, assets.food_4],
+    id: 'buffet350-opt4', title: 'OPTION 4', menu: ['Grilled Porkchop with Gravy', 'Crispy Calamares', 'Four Seasons Salad', 'Steamed Rice', 'Premium Drinks'], images: [assets.food_1, assets.food_2, assets.food_3, assets.food_4],
   },
   {
-    id: 'buffet350-opt5', title: 'OPTION 5 (350)', menu: ['Beef Steak Ranchero', 'Fish Fillet in Lemon Butter', 'Mixed Green Salad', 'Dinner Rolls', 'Premium Drinks'], images: [assets.food_1, assets.food_2, assets.food_3, assets.food_4],
+    id: 'buffet350-opt5', title: 'OPTION 5', menu: ['Beef Steak Ranchero', 'Fish Fillet in Lemon Butter', 'Mixed Green Salad', 'Dinner Rolls', 'Premium Drinks'], images: [assets.food_1, assets.food_2, assets.food_3, assets.food_4],
   },
   {
-    id: 'buffet350-opt6', title: 'OPTION 6 (350)', menu: ['Chicken Bisaya Adobo Flakes', 'Spicy Calamares', 'Hot and Spicy Spare Ribs Glazed', 'Kimchi Rice', 'Premium Drinks'], images: [assets.food_1, assets.food_2, assets.food_3, assets.food_4],
+    id: 'buffet350-opt6', title: 'OPTION 6', menu: ['Chicken Bisaya Adobo Flakes', 'Spicy Calamares', 'Hot and Spicy Spare Ribs Glazed', 'Kimchi Rice', 'Premium Drinks'], images: [assets.food_1, assets.food_2, assets.food_3, assets.food_4],
   },
 ];
 
@@ -121,7 +121,7 @@ const Buffetss = () => {
 
   return (
     <div className="buffet-container-wrapper">
-      <hr className="buffet-top-line-full" />
+
       <div className="buffet-content-main">
         {/* Breadcrumb structure as provided in your last message for Buffetss.jsx */}
         <h3 className="breadcrumb">

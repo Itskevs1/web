@@ -40,7 +40,7 @@ const Snackss = () => {
 
   return (
     <div className="snacks-container">
-      <hr className="top-line" />
+
       <div className="breadcrumb-line">
         <h3 className="breadcrumb">
           <span className="faspecc">France Bistro</span> &gt; Snacks

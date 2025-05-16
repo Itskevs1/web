@@ -7,7 +7,7 @@
 .stores-divider {
   border: none;
   height: 2px;
-  background-color: #d9a214; /* This was #d9a214 in your provided CSS */
+  background-color: #d9a214;
   margin-bottom: 20px;
   margin-top: -30px;
 }
@@ -21,7 +21,7 @@
 .stores-tabs {
   display: flex;
   gap: 20px;
-  margin-bottom: 20px; /* This was 20px, then you had another margin-bottom: 40px. I'll keep the latter as it's more specific or later. */
+  margin-bottom: 20px;
   font-size: 18px;
   font-weight: bold;
   margin-bottom: 40px; /* This will override the margin-bottom: 20px above it */
@@ -32,7 +32,6 @@
   position: relative;
   color: black;
   top: 13px;
-  /* bottom: 50px; /* This might be unintentional or for a specific layout. If the tab looks too high or low, adjust 'top' or remove 'bottom' */
 }
 
 .tab.active::after {
@@ -40,7 +39,7 @@
   display: block;
   width: 100%;
   height: 3px;
-  background-color: #d9a214; /* This was #d9a214 */
+  background-color: #d9a214;
   position: absolute;
   bottom: -5px;
   left: 0;
@@ -53,7 +52,7 @@
 }
 
 .store-card {
-  position: relative; /* Needed for absolute positioning of .store-title */
+  position: relative;
   border-radius: 20px;
   overflow: hidden;
   cursor: pointer;
@@ -77,14 +76,14 @@
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
-  background-color: rgba(111, 62, 29, 0.8); /* Semi-transparent brown */
+  background-color: rgba(111, 62, 29, 0.8);
   color: white;
   font-weight: bold;
   font-size: 18px;
-  padding: 10px 250px; /* Note: This large horizontal padding might make titles appear very wide */
+  padding: 10px 250px;
   border-radius: 10px;
   text-align: center;
-  white-space: nowrap; /* Prevent line break */
-  overflow: hidden; /* Hide overflow */
-  text-overflow: ellipsis; /* Show ... for overflowed text */
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
 }

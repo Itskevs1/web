@@ -1,9 +1,8 @@
 import React, { useState } from "react";
-import { useLocation, useNavigate, Link } from "react-router-dom"; // Added Link
+import { useLocation, useNavigate, Link } from "react-router-dom";
 import "./styles/Login.css";
-import { assets } from "../assets/assets"; // Assuming assets.hide and assets.view are defined here
-import { loginUser } from "./action"; // Make sure registerUser is also imported if not already
-// import { registerUser } from "./action"; // Assuming you have a registerUser action
+import { assets } from "../assets/assets";
+import { loginUser } from "./action";
 
 const Login = () => {
   const [values, setValues] = useState({
@@ -45,28 +44,17 @@ const Login = () => {
     try {
       const data = await loginUser(values);
       console.log("Login successful:", data);
-      navigate("/Home"); // Navigate to Home on successful login
+      navigate("/homepage"); // Navigate to Home on successful login
     } catch (error) {
       console.error("Login failed:", error.message);
       alert("Invalid credentials!");
     }
   };
 
-  // Placeholder for registerUser - replace with your actual import and implementation
+
   const registerUser = async (payload) => {
-    // This is a placeholder. Replace with your actual API call.
+    // This is a placeholder. Replace with actual API call.
     console.log("Registering user with payload:", payload);
-    // Example:
-    // const response = await fetch('/api/register', {
-    //   method: 'POST',
-    //   headers: { 'Content-Type': 'application/json' },
-    //   body: JSON.stringify(payload),
-    // });
-    // if (!response.ok) {
-    //   const errorData = await response.json();
-    //   throw new Error(errorData.message || 'Registration failed');
-    // }
-    // return await response.json();
     return { message: "Registration successful" }; // Dummy success response
   };
 
@@ -128,9 +116,9 @@ const Login = () => {
                 <img src={assets.profile} alt="Profile" className="icon" />
                 <input
                   type="text"
-                  name="username" // Added name attribute
+                  name="username"
                   placeholder="Username"
-                  value={values.username} // Controlled component
+                  value={values.username}
                   onChange={handleLoginInputChange}
                 />
               </div>
@@ -138,9 +126,9 @@ const Login = () => {
                 <img src={assets.key} alt="Key" className="icon" />
                 <input
                   type={showPassword ? "text" : "password"}
-                  name="password" // Added name attribute
+                  name="password"
                   placeholder="Password"
-                  value={values.password} // Controlled component
+                  value={values.password}
                   onChange={handleLoginInputChange}
                 />
                 <img
@@ -171,9 +159,9 @@ const Login = () => {
                 <div className="input-group">
                   <input
                     type="text"
-                    name="firstName" // Added name attribute
+                    name="firstName"
                     placeholder="First Name"
-                    value={registerValues.firstName} // Controlled component
+                    value={registerValues.firstName}
                     onChange={handleRegisterInputChange}
                     required
                   />
@@ -181,9 +169,9 @@ const Login = () => {
                 <div className="input-group">
                   <input
                     type="text"
-                    name="lastName" // Added name attribute
+                    name="lastName"
                     placeholder="Last Name"
-                    value={registerValues.lastName} // Controlled component
+                    value={registerValues.lastName}
                     onChange={handleRegisterInputChange}
                     required
                   />
@@ -193,9 +181,9 @@ const Login = () => {
               <div className="input-group">
                 <input
                   type="text"
-                  name="idNumber" // Added name attribute
+                  name="idNumber"
                   placeholder="ID Number"
-                  value={registerValues.idNumber} // Controlled component
+                  value={registerValues.idNumber}
                   onChange={handleRegisterInputChange}
                   required
                 />
@@ -210,8 +198,8 @@ const Login = () => {
                     <input
                       type="date"
                       id="birthday"
-                      name="birthday" // Added name attribute
-                      value={registerValues.birthday} // Controlled component
+                      name="birthday"
+                      value={registerValues.birthday}
                       onChange={handleRegisterInputChange}
                       required
                     />
@@ -224,8 +212,8 @@ const Login = () => {
                   </label>
                   <div className="input-group">
                     <select
-                      name="gender" // Added name attribute
-                      value={registerValues.gender} // Controlled component
+                      name="gender"
+                      value={registerValues.gender}
                       onChange={handleRegisterInputChange}
                       required
                     >
@@ -243,9 +231,9 @@ const Login = () => {
               <div className="input-group">
                 <input
                   type="email"
-                  name="email" // Added name attribute
+                  name="email"
                   placeholder="Email"
-                  value={registerValues.email} // Controlled component
+                  value={registerValues.email}
                   onChange={handleRegisterInputChange}
                   required
                 />
@@ -254,9 +242,9 @@ const Login = () => {
               <div className="input-group row-input"> {/* Changed to row-input for eye icon */}
                 <input
                   type={showNewPassword ? "text" : "password"}
-                  name="password" // Added name attribute
+                  name="password"
                   placeholder="New Password"
-                  value={registerValues.password} // Controlled component
+                  value={registerValues.password}
                   onChange={handleRegisterInputChange}
                   required
                 />
@@ -268,12 +256,12 @@ const Login = () => {
                 />
               </div>
 
-              <div className="input-group row-input"> {/* Changed to row-input for eye icon */}
+              <div className="input-group row-input">
                 <input
                   type={showConfirmPassword ? "text" : "password"}
-                  name="confirmPassword" // Added name attribute
+                  name="confirmPassword"
                   placeholder="Confirm Password"
-                  value={registerValues.confirmPassword} // Controlled component
+                  value={registerValues.confirmPassword}
                   onChange={handleRegisterInputChange}
                   required
                 />

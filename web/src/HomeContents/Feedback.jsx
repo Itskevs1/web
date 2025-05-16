@@ -15,7 +15,7 @@ const Feedback = () => {
   return (
     <div className="feedback-container" id="feedback">
       <h2>Feedback</h2>
-      <hr />
+
       <p className="headline">Your feedback = our secret ingredient for improvement!</p>
       <p className="subtext">
         Better experiences coming right up—<br />

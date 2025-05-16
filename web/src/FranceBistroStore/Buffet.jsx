@@ -1,8 +1,9 @@
 import React, { useState } from 'react';
 import { useNavigate, Link } from 'react-router-dom';
-import './frabstyle/Buffet.css';
-import { assets } from "../assets/assets";
+import './frabstyle/Buffet.css'; // Assuming this path is correct
+import { assets } from "../assets/assets"; // Assuming this path is correct
 
+// ... (options300, options350, drinks arrays remain the same) ...
 const options300 = [
   {
     id: 'buffet300-opt1',
@@ -88,6 +89,7 @@ const drinks = [
   { id: 'drink-water-500ml', name: 'Water 500ml', price: 15, image: assets.drink_4 },
 ];
 
+
 const Buffet = () => {
   const [activeSet, setActiveSet] = useState('300');
   const navigate = useNavigate();
@@ -96,12 +98,12 @@ const Buffet = () => {
 
   return (
     <div className="buffet-container">
-      <hr className="top-line" />
+
       <div className="buffet-header-row">
         <div className="buffet-path">
           <span className="faspecc">France Bistro</span> &gt; Buffet
         </div>
-        <Link to="/record" className="buffet-records-link">Records</Link>
+        <Link to="/vendor-add-items" className="buffet-records-link">Records</Link>
       </div>
 
       <div className="buffet-tabs">
@@ -109,46 +111,62 @@ const Buffet = () => {
           className={`buffet-tab ${activeSet === '300' ? 'active' : ''}`}
           onClick={() => setActiveSet('300')}
         >
-          Meals
+          300/pax
         </span>
         <span
           className={`buffet-tab ${activeSet === '350' ? 'active' : ''}`}
           onClick={() => setActiveSet('350')}
         >
-          Drinks
+          350/pax
         </span>
       </div>
 
-      <div className="options-grid">
-        {currentOptions.map((opt) => (
-          <div className="option-card" key={opt.id}>
-            <div className="option-images">
-              {opt.images.map((src, i) => (
-                <img key={i} src={src} alt={`${opt.title}-${i}`} />
-              ))}
+      {(activeSet === '300' || activeSet === '350') && (
+        <div className="options-grid">
+          {currentOptions.map((opt) => (
+            <div className="option-card" key={opt.id}>
+              <div className="option-images">
+                {opt.images.map((src, i) => (
+                  <img key={i} src={src} alt={`${opt.title}-${i}`} />
+                ))}
+              </div>
+              <div className="option-content"> {/* Renamed for clarity and to wrap details and icons */}
+                <div className="option-details">
+                  <div className="option-title">{opt.title}</div>
+                  {opt.menu.map((item, idx) => (
+                    <p key={idx}>{item}</p>
+                  ))}
+                </div>
+                <div className="card-actions">
+                  <img src={assets.edit} alt="Edit" className="action-icon" />
+                  <img src={assets.bin} alt="Delete" className="action-icon" />
+                </div>
+              </div>
             </div>
-            <div className="option-details">
-              <div className="option-title">{opt.title}</div>
-              {opt.menu.map((item, idx) => (
-                <p key={idx}>{item}</p>
-              ))}
+          ))}
+        </div>
+      )}
+
+      <div className="drinks-section">
+        <div className="drinks-title">CHOICES OF DRINKS</div>
+        <div className="drinks-grid">
+          {drinks.map((drink) => (
+            <div className="drink-card" key={drink.id}>
+              <img src={drink.image} alt={drink.name} className="drink-image" /> {/* Added class for specific styling if needed */}
+              <div className="drink-info">
+                <div className="drink-name">{drink.name}</div>
+                <div className="drink-price">₱{drink.price}</div>
+              </div>
+              <div className="card-actions">
+                <img src={assets.edit} alt="Edit" className="action-icon" />
+                <img src={assets.bin} alt="Delete" className="action-icon" />
+              </div>
             </div>
-          </div>
-        ))}
+          ))}
+        </div>
       </div>
 
-      <div className="drinks-title">CHOICES OF DRINKS</div>
-      <div className="drinks-grid">
-        {drinks.map((drink) => (
-          <div className="drink-card" key={drink.id}>
-            <img src={drink.image} alt={drink.name} />
-            <div className="drink-info">
-              <div className="drink-name">{drink.name}</div>
-              <div className="drink-price">₱{drink.price}</div>
-            </div>
-          </div>
-        ))}
-      </div>
+      <div className="page-bottom-spacer"></div>
     </div>
   );
 };

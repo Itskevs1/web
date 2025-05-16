@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import "./frabstyle/Budgetmeals.css";
-import { assets } from "../assets/assets";
+import { assets } from "../assets/assets"; // Assuming assets.edit and assets.bin are here
 import { Link } from "react-router-dom";
 
 const SETS_80 = [
@@ -32,18 +32,29 @@ const SETS_150 = [
 
 const Budgetmeals = () => {
   const [activePrice, setActivePrice] = useState(80);
-  const navigate = useNavigate();
+  const navigate = useNavigate(); // Not used in this snippet, but good to keep if needed elsewhere
   const currentSets = activePrice === 80 ? SETS_80 : SETS_150;
+
+  // Placeholder functions for edit and delete actions
+  const handleEdit = (setId) => {
+    console.log("Edit set:", setId);
+    // Navigate to an edit page or open a modal
+  };
+
+  const handleDelete = (setId) => {
+    console.log("Delete set:", setId);
+    // Implement delete logic, possibly with a confirmation
+  };
 
   return (
     <div className="budget-container">
-      <hr className="top-line" />
-
       <div className="breadcrumb-with-records">
         <h3 className="breadcrumb">
           <span className="faspecc">France Bistro</span> &gt; Budget Meals
         </h3>
-        <Link to="/record" className="buffet-records-link">Records</Link>
+        <Link to="/vendor-add-items" className="buffet-records-link"> {/* Changed class to match CSS */}
+          Records
+        </Link>
       </div>
 
       <div className="budget-tabs-bar">
@@ -72,10 +83,25 @@ const Budgetmeals = () => {
               <div>
                 <p className="set-title">SET {set.id}</p>
                 {set.items.map((line, i) => (
-                  <p className="budget-menu-item-text" key={i}>{line}</p>
+                  <p className="budget-menu-item-text" key={i}>
+                    {line}
+                  </p>
                 ))}
               </div>
-              {/* No buttons now */}
+              <div className="card-actions">
+                <img
+                  src={assets.edit}
+                  alt="Edit"
+                  className="action-icon"
+                  onClick={() => handleEdit(set.id)}
+                />
+                <img
+                  src={assets.bin}
+                  alt="Delete"
+                  className="action-icon"
+                  onClick={() => handleDelete(set.id)}
+                />
+              </div>
             </div>
           </div>
         ))}

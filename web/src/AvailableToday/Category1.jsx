@@ -1,33 +1,34 @@
+// Category1.jsx
 import React from 'react';
-import './CategoryStyle/category1.css'; // Ensure this path is correct
-import { assets } from "../assets/assets"; // Ensure this path is correct
+import './CategoryStyle/category1.css';
+import { assets } from "../assets/assets";
+import { Link } from 'react-router-dom'; // Import Link
 
 const Category1 = () => {
   const categories = [
-    { id: 'store-buffet', label: 'Buffet', image: assets.budget, link: '/buffetss' }, // Use updated links from Category1
-    { id: 'store-budgetmeals', label: 'Budget Meals', image: assets.buffets, link: '/budget-mealss' },
-    { id: 'store-budgetsnacks', label: 'Budget Snacks', image: assets.budgetmealss, link: '/budget-snackss' },
-    { id: 'store-snacks', label: 'Snacks', image: assets.snacks, link: '/snackss' },
-
+    { id: 'store-buffet', label: 'Buffet', image: assets.budget, link: '/store-buffets' },
+    { id: 'store-budgetmeals', label: 'Budget Meals', image: assets.buffets, link: '/store-budget-meals' },
+    { id: 'store-budgetsnacks', label: 'Budget Snacks', image: assets.budgetmealss, link: '/store-budget-snacks' },
+    { id: 'store-snacks', label: 'Snacks', image: assets.snacks, link: '/store-snacks' },
   ];
 
   return (
-    <div className="store1-page-container"> {/* Changed from cafeteria-container for clarity if needed */}
-      <hr className="top-line" /> {/* Keep or remove based on preference */}
-      <h3 className="breadcrumb">   {/* Keep or remove based on preference */}
+    <div className="store1-page-container">
+      <h3 className="breadcrumb">
         <span className="faspecc">France Bistro</span> &gt; Cafeteria
       </h3>
 
-      <div className="store1-category-grid"> {/* Changed classname for clarity */}
-        {categories.map((item) => ( // No idx needed for key if item.id is unique
-          <a href={item.link} key={item.id} className="store1-category-card"> {/* Changed classname */}
-            <img src={item.image} alt={item.label} className="store1-category-img" /> {/* Changed classname */}
-            <div className="store1-category-label">{item.label}</div> {/* Changed classname */}
-          </a>
+      <div className="store1-category-grid">
+        {categories.map((item) => (
+          // Use Link component here
+          <Link to={item.link} key={item.id} className="store1-category-card">
+            <img src={item.image} alt={item.label} className="store1-category-img" />
+            <div className="store1-category-label">{item.label}</div>
+          </Link>
         ))}
       </div>
 
-      <div className="store1-caption"> {/* Keep or remove based on preference */}
+      <div className="store1-caption">
         <h2>Your Favorite Bites,</h2>
         <p>Just a Click Away!</p>
       </div>

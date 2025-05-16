@@ -1,21 +1,32 @@
 .auth-container {
-  position: relative;
+  position: relative; /* Remains the same */
   width: 100%;
   height: 100vh;
   display: flex;
   align-items: center;
   justify-content: center;
-  overflow: hidden;
+  overflow: hidden; /* Remains the same */
+  /* Add this to make sure the background image covers the entire container */
+  background-image: url("/cafet.png"); /* Reference your image path correctly */
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
 }
 
 .bg {
+  /*
+  You can remove this element and its styling if you set the background
+  directly on .auth-container. If you prefer to keep it as an <img> tag
+  for semantic reasons or specific JS interactions, ensure its z-index
+  is less than the .auth-wrapper.
+  */
   position: absolute;
   top: 0;
   left: 0;
   width: 100%;
   height: 100%;
   object-fit: cover;
-  z-index: -1;
+  z-index: -1; /* Keep this if using the <img> tag */
 }
 
 .auth-wrapper {
@@ -25,19 +36,42 @@
   border-radius: 20px;
   overflow: hidden;
   box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+  position: relative; /* Add this to ensure it's above the .bg if using the <img> tag */
+  z-index: 1; /* Add this to ensure it's above the .bg if using the <img> tag */
+  /* Optional: Add a slight background to the wrapper if you want a semi-transparent effect
+     over the main background, allowing the image to peek through but making text more readable.
+     For example: background-color: rgba(255, 255, 255, 0.1);
+     Or, you can make the panels themselves slightly transparent.
+  */
 }
 
 /* ✅ Match height of both panels */
 .auth-panel {
   width: 50%;
-  padding: 40px 40px;
+  padding: 40px 40px; /* Consider adjusting padding if content is too close to edges */
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
   min-height: 620px; /* Equal height for login and signup */
+  box-sizing: border-box; /* Add this to include padding and border in the element's total width and height */
 }
 
+/* ... (rest of your CSS remains largely the same) ... */
+
+.white-bg {
+  background-color: #ffffff;
+  /* Optional: If you want the background image to be slightly visible through the white panel
+  background-color: rgba(255, 255, 255, 0.9);
+  */
+}
+
+.yellow-bg {
+  background-color: #fcbf29;
+  /* Optional: If you want the background image to be slightly visible through the yellow panel
+  background-color: rgba(252, 191, 41, 0.9);
+  */
+}
 .auth-heading {
   font-size: 28px;
   font-weight: bold;

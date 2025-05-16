@@ -1,33 +1,65 @@
-.about-container {
-  font-family: sans-serif;
-  text-align: center;
+/* Global white background */
+html,
+body,
+#root {
   background-color: white;
+  margin: 0;
+  padding: 0;
+  font-family: "Poppins", sans-serif;
+  height: 100%;
 }
 
+/* Container */
+.about-us-container {
+  background-color: white;
+  width: 100%;
+}
+
+/* Title */
 .about-title {
   color: #8b2c00;
-  font-size: 20px;
+  font-size: 24px;
   font-weight: bold;
-  padding: 20px 0;
+  padding: 20px;
   text-align: left;
-  margin-left: 20px;
+  margin: 0;
 }
 
+/* Section layout */
 .about-section {
   display: flex;
   align-items: center;
   justify-content: center;
-  padding: 20px;
+  padding: 40px 20px;
   gap: 30px;
   flex-wrap: wrap;
-  border-top: 1px solid #ccc;
 }
 
+/* Text blocks */
 .about-text {
   max-width: 400px;
   text-align: left;
+  font-size: 16px;
+  line-height: 1.6;
 }
 
+/* Center-aligned full width text */
+.about-full-width-text {
+  max-width: 800px;
+  margin: 0 auto;
+  font-size: 16px;
+  line-height: 1.6;
+  text-align: center;
+}
+
+/* Final tagline */
+.about-footer-text {
+  font-size: 18px;
+  font-weight: bold;
+  text-align: center;
+}
+
+/* Images */
 .about-image {
   width: 250px;
   height: auto;
@@ -41,20 +73,9 @@
   height: 180px;
 }
 
-.about-full-width-text {
-  max-width: 800px;
-  margin: 0 auto;
-  font-size: 16px;
-}
-
-.about-footer-text {
-  padding: 20px;
-  font-weight: bold;
-  border-top: 1px solid #ccc;
-}
-
+/* Background colors */
 .yellow-bg {
-  background-color: #fff2d6;
+  background-color: #fbbc24;
 }
 
 .white-bg {

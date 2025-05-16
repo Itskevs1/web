@@ -1,9 +1,8 @@
 // HomeBody.jsx
-import React, { useState } from "react";
+import React from "react";
 import { Link } from "react-router-dom";
 import { assets } from "../assets/assets";
 import "./style/HomeBody.css";
-
 
 const Body = () => (
   <div className='header'>
@@ -68,6 +67,11 @@ const HomeBody = () => {
       <FavoriteBites />
       <DailyDeals />
       <Bottom />
+
+      {/* Footer directly placed here without using a const */}
+      <footer className="footer">
+        <p>© 2025 USTP Food Corner. All rights reserved.</p>
+      </footer>
     </>
   );
 };

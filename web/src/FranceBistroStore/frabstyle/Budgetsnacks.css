@@ -20,7 +20,7 @@
 
 .breadcrumb-left .breadcrumb {
   /* Combined selector for clarity */
-  font-size: 24px;
+  font-size: 18px;
   color: #5a2e0d;
   white-space: nowrap;
   margin: 0; /* Removed default margin from h3 */
@@ -47,7 +47,6 @@
 /* Tabs styling */
 .tabs-bar {
   margin-bottom: 25px;
-  border-bottom: 1px solid #eee; /* Example: subtle line under tabs */
 }
 
 .tabs {
@@ -199,3 +198,5 @@
   height: 3px;
   background: #c79a14;
 }
+
+.tabs-bar;

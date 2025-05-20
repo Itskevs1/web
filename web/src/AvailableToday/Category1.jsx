@@ -6,10 +6,10 @@ import { Link } from 'react-router-dom'; // Import Link
 
 const Category1 = () => {
   const categories = [
-    { id: 'store-buffet', label: 'Buffet', image: assets.budget, link: '/store-buffets' },
-    { id: 'store-budgetmeals', label: 'Budget Meals', image: assets.buffets, link: '/store-budget-meals' },
-    { id: 'store-budgetsnacks', label: 'Budget Snacks', image: assets.budgetmealss, link: '/store-budget-snacks' },
-    { id: 'store-snacks', label: 'Snacks', image: assets.snacks, link: '/store-snacks' },
+    { id: 'store-buffet', label: 'Buffet', image: assets.budget, link: '/france-bistro-buffets' },
+    { id: 'store-budgetmeals', label: 'Budget Meals', image: assets.buffets, link: '/france-bistro-budget-meals' },
+    { id: 'store-budgetsnacks', label: 'Budget Snacks', image: assets.budgetmealss, link: '/france-bistro-budget-snacks' },
+    { id: 'store-snacks', label: 'Snacks', image: assets.snacks, link: '/france-bistro-snacks' },
   ];
 
   return (

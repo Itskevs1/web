@@ -131,7 +131,7 @@ const FaspeccBuffet = () => {
     <div className="buffetss-page-wrapper">
       <div className="buffetss-content-area">
         <h3 className="breadcrumb">
-          <span className="buffetss-brand-name">France Bistro</span> &gt; Buffet
+          <span className="buffetss-brand-name">FASPeCC</span> &gt; Buffet
         </h3>
 
         <div className="buffetss-controls-bar">

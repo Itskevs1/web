@@ -4,16 +4,16 @@ import { assets } from "../assets/assets"; // Make sure this path is correct
 
 const FaspeccCategory = () => {
   const categories = [
-    { id: 'faspecc-buffet', label: 'Buffet', image: assets.budget, link: '/choice-fasspecc-buffet' },
+    { id: 'faspecc-buffet', label: 'Buffet', image: assets.budget, link: '/choice-faspecc-buffet' },
     { id: 'faspecc-budgetmeals', label: 'Budget Meals', image: assets.buffets, link: '/choice-faspecc-budget-meals' },
-    { id: 'faspecc-budgetsnacks', label: 'Budget Snacks', image: assets.budgetmealss, link: '/choice-budget-snacks' },
+    { id: 'faspecc-budgetsnacks', label: 'Budget Snacks', image: assets.budgetmealss, link: '/choice-faspecc-budget-snacks' },
     { id: 'faspecc-snacks', label: 'Snacks', image: assets.snacks, link: '/choice-faspecc-snacks' },
   ];
 
   return (
     <div className="faspecc-category-page-container">
       <h3 className="breadcrumb">
-        <span className="faspecc-brand-name">France Bistro</span> &gt; Cafeteria
+        <span className="faspecc-brand-name">FASPeCC</span> &gt; Cafeteria
       </h3>
       <div className="faspecc-category-grid">
         {categories.map((item) => (

@@ -1,3 +1,4 @@
+// App.jsx:
 import React from 'react';
 import { Route, Routes, useLocation, Navigate } from 'react-router-dom';
 
@@ -17,7 +18,7 @@ import Snacks from './FranceBistroStore/Snacks';
 import Buffet from './FranceBistroStore/Buffet';
 import BudgetMeals from './FranceBistroStore/Budgetmeals';
 import Budgetsnacks from './FranceBistroStore/Budgetsnacks';
-import Category1 from './AvailableToday/category1';
+import Category1 from './AvailableToday/category1'; // This might be linked to the old '/availabletoday' logic. Review if its usage changes.
 import Snackss from './hasOrder&Reserved/Snackss';
 import Buffetss from './hasOrder&Reserved/Buffetss';
 import Budgetmealss from './hasOrder&Reserved/Budgetmealss';
@@ -31,7 +32,7 @@ import Order from './CartandOrder/Orders';
 import VendorStores from './Vendor/VendorStores';
 import VenCategory1 from './Vendor/VenCategory1';
 import AddItems from './Records/AddItems';
-import Category2 from './AvailableToday/category2';
+import Category2 from './AvailableToday/category2'; // This might be linked to the old '/availabletoday' logic. Review if its usage changes.
 import FasSnacks from './FASPeCC/FasSnacks';
 import FasBuffet from './FASPeCC/FasBuffet';
 import FasBudgetsnacks from './FASPeCC/FasBudgetsnacks';
@@ -51,21 +52,31 @@ import FaspeccBudgetMeals from './AllStores/FaspeccBudgetMeals';
 import FaspeccBudgetSnacks from './AllStores/FaspeccBudgetSnacks';
 import FaspeccSnacks from './AllStores/FaspeccSnacks';
 import ForgotPassword from './LoginSignup/ForgotPassword';
+import FranceCategory from './AllStores/FranceCategory';
+import FranceSnacks from './AllStores/FranceSnacks';
+import FranceBuffets from './AllStores/FranceBuffets';
+import FranceBudgetSnacks from './AllStores/FranceBudgetSnacks';
+import FranceBudgetMeals from './AllStores/FranceBudgetMeals';
 
 
 const App = () => {
   const location = useLocation();
 
   // Paths that use the "Navbars" (logged-in general navbar)
+  // CHANGED: Replaced '/availabletoday' with '/available-today'
   const pathsUsingNavbars = [
-    '/Homepage', '/homepage', '/stores', '/store1',
-    '/availabletoday', '/buffet', '/budget-meals', '/budget-snacks', '/snacks',
-    '/france-bistro-store', '/faspecc-store', '/store-snacks', '/store-buffets',
-    '/store-budget-meals', '/store-budget-snacks', '/orders', '/cart', '/checkout',
+    '/homepage', '/stores', '/available-today', // MODIFIED HERE
+    '/buffet', '/budget-meals', '/budget-snacks', '/snacks',
+    '/france-bistro-store', '/faspecc-store', '/orders', '/cart', '/checkout',
     '/pay', '/place-order', '/confirmation', '/cafeteria',
-    '/vendor-france-bistro', '/faspecc-snacks', '/faspecc-budget-buffet',
-    '/faspecc-budget-snacks', '/faspecc-budget-meals', '/user-profile',
-    '/vendor-add-items', '/vendor-list-items', '/vendor-orders', '/choice-fasspecc-buffet', '/choice-faspecc-budget-meals', '/choice-faspecc-snacks'
+    '/vendor-france-bistro',
+    '/faspecc-snacks', '/faspecc-budget-buffet',
+    '/faspecc-budget-snacks', '/faspecc-budget-meals',
+    '/user-profile', '/vendor-add-items', '/vendor-list-items', '/vendor-orders',
+    '/france-bistro-buffets', '/france-bistro-budget-meals', '/france-bistro-budget-snacks', '/france-bistro-snacks',
+    '/faspecc-store-category', '/choice-faspecc-budget-snacks', '/choice-faspecc-budget-meals', '/choice-faspecc-buffet', '/choice-faspecc-snacks', '/france-bistro-stores',
+
+    '/choice-france-bistro-budget-snacks', '/choice-france-bistro-budget-meals', '/choice-france-bistro-buffet', '/choice-france-bistro-snacks',
   ];
 
   // Paths that should exclusively use AdminNavbar.jsx
@@ -110,18 +121,23 @@ const App = () => {
           <Route path='/forgot-password' element={<ForgotPassword />} />
           {/* --- Routes primarily for Logged-in view (using Navbars) --- */}
           <Route path='/stores' element={<Stores />} />
-          <Route path="/availabletoday" element={<Stores />} />
-          <Route path='/store1' element={<Store1 />} />
+          {/* CHANGED: Updated path to /available-today */}
+          <Route path="/available-today" element={<Stores />} />
+
+
           <Route path='/snacks' element={<Snacks />} />
           <Route path='/buffet' element={<Buffet />} />
           <Route path='/budget-meals' element={<BudgetMeals />} />
           <Route path='/budget-snacks' element={<Budgetsnacks />} />
+
           <Route path='/france-bistro-store' element={<Category1 />} />
           <Route path='/faspecc-store' element={<Category2 />} />
-          <Route path='/store-snacks' element={<Snackss />} />
-          <Route path='/store-buffets' element={<Buffetss />} />
-          <Route path='/store-budget-meals' element={<Budgetmealss />} />
-          <Route path='/store-budget-snacks' element={<Budgetsnackss />} />
+
+          <Route path='/france-bistro-snacks' element={<Snackss />} />
+          <Route path='/france-bistro-buffets' element={<Buffetss />} />
+          <Route path='/france-bistro-budget-meals' element={<Budgetmealss />} />
+          <Route path='/france-bistro-budget-snacks' element={<Budgetsnackss />} />
+
           <Route path='/cart' element={<Cart />} />
           <Route path="/checkout" element={<Checkout />} />
           <Route path="/pay" element={<PayCash />} />
@@ -142,16 +158,8 @@ const App = () => {
           <Route path='/add-items' element={<Navigate replace to="/vendor-add-items" />} />
 
           {/* === ADMIN SECTION === */}
-          {/* Dasboard component provides the layout (sidebar) for all admin routes. */}
-          {/* It will also render the stats view when the path is exactly '/admin-dashboard'. */}
-          {/* AdminNavbar will be rendered above these routes if matched by pathsUsingAdminNavbar */}
-
           <Route path='/admin-dashboard' element={<Dasboard />} />
-
-          {/* These routes use Dasboard as their layout element for the main content area (e.g., sidebar + page).
-              AdminNavbar is handled globally above based on the path.
-           */}
-          <Route element={<Dasboard />}> {/* This makes Dasboard the layout shell for content */}
+          <Route element={<Dasboard />}>
             <Route path='/admin-account-confirmation' element={<AdminAccountConfirmation />} />
             <Route path='/admin-account-verified' element={<AdminAccountVerified />} />
             <Route path='/admin-orders' element={<AdminOrders />} />
@@ -162,10 +170,16 @@ const App = () => {
           {/* Fallback for unmatched routes */}
           <Route path="*" element={<div style={{ padding: "20px", textAlign: "center" }}><h2>404 - Page Not Found</h2></div>} />
 
+          <Route path='/france-bistro-stores' element={<FranceCategory />} />
+          <Route path='/choice-france-bistro-snacks' element={<FranceSnacks />} />
+          <Route path='/choice-france-bistro-buffet' element={<FranceBuffets />} />
+          <Route path='/choice-france-bistro-budget-snacks' element={<FranceBudgetSnacks />} />
+          <Route path='/choice-france-bistro-budget-meals' element={<FranceBudgetMeals />} />
+
           <Route path='/faspecc-store-category' element={<FaspeccCategory />} />
-          <Route path='/choice-fasspecc-buffet' element={<FaspeccBuffet />} />
+          <Route path='/choice-faspecc-buffet' element={<FaspeccBuffet />} />
           <Route path='/choice-faspecc-budget-meals' element={<FaspeccBudgetMeals />} />
-          <Route path='/choice-budget-snacks' element={<FaspeccBudgetSnacks />} />
+          <Route path='/choice-faspecc-budget-snacks' element={<FaspeccBudgetSnacks />} />
           <Route path='/choice-faspecc-snacks' element={<FaspeccSnacks />} />
         </Routes>
         <ToastContainer />

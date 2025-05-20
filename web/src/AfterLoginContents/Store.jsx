@@ -1,3 +1,4 @@
+// Stores.jsx:
 import React from 'react';
 import './styless/Store.css';
 import { useLocation, useNavigate } from 'react-router-dom';
@@ -5,12 +6,9 @@ import { assets } from '../assets/assets';
 
 
 const allStores = [
-  { image: assets.food_1, title: 'France Bistro', route: '/france-bistro-store' },
+  { image: assets.food_1, title: 'France Bistro', route: '/france-bistro-stores' },
   { image: assets.food_2, title: 'FASPeCC', route: '/faspecc-store-category' },
-  { image: assets.food_3, title: 'France Bistro', route: '/store3' },
-  { image: assets.food_4, title: 'France Bistro', route: '/store4' },
-  { image: assets.food_5, title: 'FASPeCC', route: '/store5' },
-  { image: assets.food_6, title: 'France Bistro', route: '/store6' },
+
 ];
 
 
@@ -23,7 +21,8 @@ const Stores = () => {
   const location = useLocation();
   const navigate = useNavigate();
 
-  const isAvailableToday = location.pathname === '/availabletoday';
+  // CHANGED: Updated path to /available-today
+  const isAvailableToday = location.pathname === '/available-today';
 
 
   const storeData = isAvailableToday ? availableTodayStores : allStores;
@@ -48,7 +47,8 @@ const Stores = () => {
         </span>
         <span
           className={`tab ${isAvailableToday ? 'active' : ''}`}
-          onClick={() => handleTabClick('/availabletoday')}
+          // CHANGED: Updated path to /available-today in onClick handler
+          onClick={() => handleTabClick('/available-today')}
         >
           Available Today
         </span>

@@ -1,6 +1,7 @@
+// FranceBudgetMeals.jsx
 import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
-import "./AllStyles/FaspeccBudgetMeals.css"; // Ensure this path is correct
+import "./AllStyles/FranceBudgetMeals.css"; // Updated CSS import path
 import { assets } from "../assets/assets"; // Ensure this path is correct
 import { useCart } from '../CartandOrder/userCart.js'; // Ensure this path is correct
 import { toast } from 'react-toastify';
@@ -32,14 +33,14 @@ const SETS_150 = [
   }
 ];
 
-const FaspeccBudgetMeals = () => {
+const FranceBudgetMeals = () => { // Renamed component
   const [activePrice, setActivePrice] = useState(80);
   const navigate = useNavigate();
-  const { addToCart } = useCart();
+  const { addToCart } = useCart(); // Assuming useCart might be a Zustand store or similar for .getState()
   const currentSets = activePrice === 80 ? SETS_80 : SETS_150;
 
-  const handleAdd = (itemDetails, type) => {
-    addToCart(itemDetails, type); // type will be 'reserve'
+  const handleAdd = (itemDetails, type) => { // type will be 'reserve'
+    addToCart(itemDetails, type);
     let updatedCart = { order: [], reserve: [] };
     try {
       const storedCart = localStorage.getItem('shoppingCart');
@@ -57,7 +58,7 @@ const FaspeccBudgetMeals = () => {
     toast.success(`Successfully added to Reserve! You have ${totalItems} item(s) in your reservation list.`);
   };
 
-  const handleSetAction = (set, type) => { // type will be 'reserve'
+  const handleSetAction = (set, actionType) => { // actionType will be 'reserve'
     const itemDetails = {
       id: `set-${set.id}-${activePrice}`,
       name: `SET ${set.id} (${activePrice}/pax)`,
@@ -67,49 +68,49 @@ const FaspeccBudgetMeals = () => {
       menu: set.items,
       category: 'Budget Meal Set'
     };
-    handleAdd(itemDetails, type);
+    handleAdd(itemDetails, actionType);
   };
 
   return (
-    <div className="fbm-page-container">
-      <h3 className="breadcrumb">
-        <span className="fbm-brand-name">FASPeCC</span> &gt; Budget Meals
+    <div className="fr-bml-page-container"> {/* New ClassName */}
+      <h3 className="fr-bml-breadcrumb"> {/* New ClassName */}
+        <span className="fr-bml-brand-name">France Bistro</span> &gt; Budget Meals {/* Updated Text & New ClassName */}
       </h3>
 
-      <div className="fbm-controls-bar">
-        <div className="fbm-price-tabs">
+      <div className="fr-bml-controls-bar"> {/* New ClassName */}
+        <div className="fr-bml-price-tabs"> {/* New ClassName */}
           {[80, 150].map((price) => (
             <span
               key={price}
-              className={`fbm-price-tab ${price === activePrice ? "active" : ""}`}
+              className={`fr-bml-price-tab ${price === activePrice ? "active" : ""}`} /* New ClassName */
               onClick={() => setActivePrice(price)}
             >
               {price}/pax
             </span>
           ))}
         </div>
-        <div className="fbm-action-icons">
+        <div className="fr-bml-action-icons"> {/* New ClassName */}
           <img src={assets.clipboard} alt="Orders" title="Go to Orders" onClick={() => navigate('/orders')} />
           <img src={assets.bag} alt="Cart" title="Go to Cart" onClick={() => navigate('/cart')} />
         </div>
       </div>
 
-      <div className="fbm-sets-grid">
+      <div className="fr-bml-sets-grid"> {/* New ClassName */}
         {currentSets.map((set) => (
-          <div key={set.id} className="fbm-set-card">
-            <div className="fbm-set-card-images">
+          <div key={set.id} className="fr-bml-set-card"> {/* New ClassName */}
+            <div className="fr-bml-set-card-images"> {/* New ClassName */}
               {set.images && set.images.slice(0, 4).map((src, i) => (
                 <img key={i} src={src || (assets.defaultFoodImage || undefined)} alt={`Set ${set.id} pic ${i + 1}`} />
               ))}
             </div>
-            <div className="fbm-set-card-details">
+            <div className="fr-bml-set-card-details"> {/* New ClassName */}
               <div>
-                <p className="fbm-set-card-title">SET {set.id}</p>
+                <p className="fr-bml-set-card-title">SET {set.id}</p> {/* New ClassName */}
                 {set.items && set.items.map((line, i) => (
-                  <p className="fbm-set-card-menu-item" key={i}>{line}</p>
+                  <p className="fr-bml-set-card-menu-item" key={i}>{line}</p> /* New ClassName */
                 ))}
               </div>
-              <div className="fbm-set-card-actions">
+              <div className="fr-bml-set-card-actions"> {/* New ClassName */}
                 <button onClick={() => handleSetAction(set, 'reserve')}>Reserve</button>
                 {/* Order button is definitively removed here */}
               </div>
@@ -121,4 +122,4 @@ const FaspeccBudgetMeals = () => {
   );
 };
 
-export default FaspeccBudgetMeals;
+export default FranceBudgetMeals;

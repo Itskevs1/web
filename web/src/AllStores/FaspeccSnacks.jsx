@@ -43,7 +43,7 @@ const FaspeccSnacks = () => {
 
       <div className="breadcrumb-line">
         <h3 className="breadcrumb">
-          <span className="faspecc">France Bistro</span> &gt; Snacks
+          <span className="faspecc">FASPeCC</span> &gt; Snacks
         </h3>
       </div>
 
